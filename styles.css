@@ -2,6 +2,7 @@ body {
     background-color: #232323;
 }
 
+
 h1 {
     color: white;
 }
@@ -20,6 +21,9 @@ h1 {
     max-width: 600px;
 }
 
-#message {
-    color: white;
+#stripe {
+    background-color: white;
+    text-align: center;
+    height: 30px;
+    color: black;
 }

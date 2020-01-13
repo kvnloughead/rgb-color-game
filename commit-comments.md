@@ -14,5 +14,9 @@ Step by Step (corresponding to commits)
         - appearance of 'Try Again' and 'Correct!' messages
 5. Changes include 
     - Added a README
-    - slight refactoring (`function changeColors`) 
-    - randomized `colorToGuess` (`function pickColor`)
+    - slight refactoring (function `changeColors`) 
+    - randomized `colorToGuess` (function `pickColor`)
+6. Changes include
+    - Added functions `generateRandomColors` and `randomRGB` to make the squares load as random colors each time
+    - Added `reset.addEventListener`
+    - Tweaked some display settings
