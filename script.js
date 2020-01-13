@@ -13,6 +13,8 @@ var squares = $All('.squares');
 var colorToGuessDisplay = $('h1 span');
 var colorToGuess = pickColor();
 var reset = $('#reset');
+var easy = $('.easy')
+var hard = $('.hard')
 
 colorToGuessDisplay.textContent = colorToGuess;
 var messageDisplay = $('#message');
@@ -42,6 +44,20 @@ reset.addEventListener('click', function(){
     reset.textContent = 'New Colors'
     for (var i = 0; i < squares.length; i++){
         squares[i].style.backgroundColor = colors[i];
+    };
+});
+
+easy.addEventListener('click', function(){
+    if (!this.classList.contains('selected')){
+        this.classList.toggle('selected');
+        hard.classList.toggle('selected');
+    };
+});
+
+hard.addEventListener('click', function(){
+    if (!this.classList.contains('selected')){
+        this.classList.toggle('selected');
+        easy.classList.toggle('selected');
     };
 });
 
