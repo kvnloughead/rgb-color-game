@@ -25,9 +25,13 @@ h1 {
     background-color: white;
     text-align: center;
     height: 30px;
-    color: black;
+    color: #232323;
 }
 
 .selected {
     background-color: blue;
+}
+
+.hidden {
+    background-color: #232323 !important;
 }

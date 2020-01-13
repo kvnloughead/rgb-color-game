@@ -5,13 +5,17 @@ function $All(elem){
     return document.querySelectorAll(elem);
 }
 
-var colors = generateRandomColors(6);
-
+var numSquares = 6;
+var squares = $All('.squares');
+var bottomRow = $All('.bottom-row');
+var colors = generateRandomColors(squares.length);
 
 var h1 = $('h1')
-var squares = $All('.squares');
+
 var colorToGuessDisplay = $('h1 span');
 var colorToGuess = pickColor();
+
+// Button selectors
 var reset = $('#reset');
 var easy = $('.easy')
 var hard = $('.hard')
@@ -35,22 +39,17 @@ for (var i = 0; i < squares.length; i++){
     })
 }
 
-reset.addEventListener('click', function(){
-    h1.style.backgroundColor = '#232323';
-    colors = generateRandomColors(6);
-    colorToGuess = pickColor();
-    colorToGuessDisplay.textContent = colorToGuess;
-    messageDisplay.textContent = '';
-    reset.textContent = 'New Colors'
-    for (var i = 0; i < squares.length; i++){
-        squares[i].style.backgroundColor = colors[i];
-    };
-});
+reset.addEventListener('click', newGame);
 
 easy.addEventListener('click', function(){
     if (!this.classList.contains('selected')){
         this.classList.toggle('selected');
         hard.classList.toggle('selected');
+        for (square of bottomRow){
+            square.classList.toggle('hidden');
+        };
+        numSquares = 3;
+        newGame();
     };
 });
 
@@ -58,11 +57,16 @@ hard.addEventListener('click', function(){
     if (!this.classList.contains('selected')){
         this.classList.toggle('selected');
         easy.classList.toggle('selected');
+        for (square of bottomRow){
+            square.classList.toggle('hidden');
+        };
+        numSquares = 6;
+        newGame();
     };
 });
 
 function pickColor(){
-    var pickThis = Math.floor(Math.random()*colors.length);
+    var pickThis = Math.floor(Math.random()*numSquares);
     return colors[pickThis];
 }
 
@@ -88,3 +92,15 @@ function randomRGB(){
     return `rgb(${r}, ${g}, ${b})`;
 }
 
+function newGame(){
+    h1.style.backgroundColor = '#232323';
+    colors = generateRandomColors(numSquares);
+    colorToGuess = pickColor();
+    console.log(colors.indexOf(colorToGuess));
+    colorToGuessDisplay.textContent = colorToGuess;
+    messageDisplay.textContent = '';
+    reset.textContent = 'New Colors'
+    for (var i = 0; i < squares.length; i++){
+        squares[i].style.backgroundColor = colors[i];
+    };
+};
