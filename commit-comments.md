@@ -35,4 +35,7 @@ Step by Step (corresponding to commits)
 
 9. Changes
     - Fixed the button outline issue with `outline: none;`.  Didn't know that was a thing.
-    - Significant refactoring
+    - Refactored game mode buttons
+
+10. 
+
