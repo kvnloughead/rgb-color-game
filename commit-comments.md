@@ -20,3 +20,15 @@ Step by Step (corresponding to commits)
     - Added functions `generateRandomColors` and `randomRGB` to make the squares load as random colors each time
     - Added `reset.addEventListener`
     - Tweaked some display settings
+7. Work in this commit probably diverges from Colt's implementation, I did the javascript myself.  Changes:
+    - Added easy and hard buttons
+    - App hides bottom row when set on Easy
+    - Winning color only comes from the visible row when on easy
+
+8. Mostly working on CSS now
+    - Improved banner styling
+    - Improved ribbon/button styling
+    - Struggled to figure out why a slight border is appearing around the buttons after they are selected.  Stopped struggling.
+    - Bevelled edges on squares
+    - Included transition delays on buttons and squares
+    - Tried to prevent square transitions on page load unsuccessfully.  Decided I liked it that way anyway.

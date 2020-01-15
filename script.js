@@ -93,7 +93,7 @@ function randomRGB(){
 }
 
 function newGame(){
-    h1.style.backgroundColor = '#232323';
+    h1.style.backgroundColor = 'steelblue';
     colors = generateRandomColors(numSquares);
     colorToGuess = pickColor();
     console.log(colors.indexOf(colorToGuess));
