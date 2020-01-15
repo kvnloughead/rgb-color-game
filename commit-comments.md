@@ -32,3 +32,7 @@ Step by Step (corresponding to commits)
     - Bevelled edges on squares
     - Included transition delays on buttons and squares
     - Tried to prevent square transitions on page load unsuccessfully.  Decided I liked it that way anyway.
+
+9. Changes
+    - Fixed the button outline issue with `outline: none;`.  Didn't know that was a thing.
+    - Significant refactoring
